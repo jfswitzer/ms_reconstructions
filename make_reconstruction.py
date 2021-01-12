@@ -9,7 +9,7 @@ def main():
     #make sure that it knows to use gpus
     doc = Metashape.Document()
     chunk = doc.addChunk()
-    photos = glob.glob('images/*.png')
+    photos = glob.glob('/extvol/images/*.png')
     chunk.addPhotos(photos)
     #todo not sure if reference preselection should be true or not
     chunk.matchPhotos(generic_preselection=True, reference_preselection=False)
