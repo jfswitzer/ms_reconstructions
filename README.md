@@ -40,8 +40,9 @@ Set up environment stuff / activate the metashape license (this is my trial key,
 `cd metashape-pro`
 
 Activate the license
+`rm metashape_trial.lic`
 `./metashape.sh --activate TXC3V-LUVCT-E1BLK-U83UR-GP25H`
-`export agisoft_LICENSE=/extvol/metashape-pro/metashape_trial.lic //(or whatever license file is)`
+`export agisoft_LICENSE=/extvol/metashape-pro/metashape_trial.lic
 `cd ..`
 Remove stale git repo & re-clone, run the reconstructions script
 `rm -rf ms_reconstructions`
