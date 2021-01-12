@@ -9,7 +9,7 @@ spec:
       - name: aslr
         image: gitlab-registry.nautilus.optiputer.net/prp/jupyterlab:latest
         command: ["/bin/sh", "-c"]
-        args: ["cd /extvol; python3 -m pip install Metashape-1.7.0-cp35.cp36.cp37.cp38-abi3-linux_x86_64.whl; yes | sudo dpkg --add-architecture i386; yes | sudo apt-get update; yes | sudo apt-get install libglu1-mesa; cd metashape-pro; ./metashape.sh --activate TXC3V-LUVCT-E1BLK-U83UR-GP25H; cd /extvol; rm -rf ms_reconstructions; git clone https://github.com/jfswitzer/ms_reconstructions.git; cd ms_reconstructions; python3 make_reconstruction.py"]
+        args: ["cd /extvol; python3 -m pip install Metashape-1.7.0-cp35.cp36.cp37.cp38-abi3-linux_x86_64.whl; yes | sudo dpkg --add-architecture i386; yes | sudo apt-get update; yes | sudo apt-get install libglu1-mesa; cd metashape-pro; rm metashape_trial.lic; ./metashape.sh --activate TXC3V-LUVCT-E1BLK-U83UR-GP25H; export agisoft_LICENSE=/extvol/metashape-pro/metashape_trial.lic; cd /extvol; rm -rf ms_reconstructions; git clone https://github.com/jfswitzer/ms_reconstructions.git; cd ms_reconstructions; python3 make_reconstruction.py"]
         resources:
           limits:
             nvidia.com/gpu: 2
