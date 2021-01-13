@@ -19,10 +19,11 @@ def main():
     
     #//todo not sure if reference preselection should be true or not
     chunk.matchPhotos(generic_preselection=True, reference_preselection=False)
-    chunk.optimizeCameras() #defaults are ok (match params in gui)
 
     # align cameras
-    chunk.alignCameras()
+    chunk.alignCameras()    
+
+    chunk.optimizeCameras() #defaults are ok (match params in gui)
 
     #//todo - optimize cameras (?)
 
