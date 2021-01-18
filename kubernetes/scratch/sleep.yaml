@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: msr2
+spec:
+  template:
+    spec:
+      containers:
+      - name: aslr
+        image: gitlab-registry.nautilus.optiputer.net/prp/jupyterlab:latest
+        command: ["/bin/sh", "-c"]
+        args: ["sleep 6h"]
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+            memory: 16Gi
+            cpu: 500m
+          requests:
+            nvidia.com/gpu: 1
+            memory: 16Gi
+            cpu: 500m
+        volumeMounts:
+        - mountPath: /extvol
+          name: examplevol1
+      volumes:
+        - name: examplevol1
+          persistentVolumeClaim:
+            claimName: msvol2
+      restartPolicy: Never
+  backoffLimit: 4

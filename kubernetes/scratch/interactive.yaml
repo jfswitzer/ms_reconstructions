@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: int-pod-gpu2
+spec:
+  containers:
+  - name: gpu-container
+    image: gitlab-registry.nautilus.optiputer.net/prp/jupyterlab:latest
+    command: ["sleep", "infinity"]
+    args: []
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+    volumeMounts:
+    - mountPath: /extvol
+      name: examplevol1
+  volumes:
+    - name: examplevol1
+      persistentVolumeClaim:
+        claimName: msvol2

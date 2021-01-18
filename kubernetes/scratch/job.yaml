@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: msr
+  name: msr2
 spec:
   template:
     spec:
@@ -13,18 +13,18 @@ spec:
         resources:
           limits:
             nvidia.com/gpu: 2
-            memory: 128Gi
-            cpu: 1000m
+            memory: 64Gi
+            cpu: 2000m
           requests:
             nvidia.com/gpu: 2
-            memory: 128Gi
-            cpu: 1000m
+            memory: 64Gi
+            cpu: 2000m
         volumeMounts:
         - mountPath: /extvol
           name: examplevol1
       volumes:
         - name: examplevol1
           persistentVolumeClaim:
-            claimName: msvol
+            claimName: msvol2
       restartPolicy: Never
   backoffLimit: 1
