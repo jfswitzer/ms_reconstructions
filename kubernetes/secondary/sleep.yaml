@@ -9,7 +9,7 @@ spec:
       - name: aslr
         image: gitlab-registry.nautilus.optiputer.net/prp/jupyterlab:latest
         command: ["/bin/sh", "-c"]
-        args: ["sleep 6h"]
+        args: ["sleep 12h"]
         resources:
           limits:
             nvidia.com/gpu: 1
