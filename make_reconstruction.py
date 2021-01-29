@@ -8,7 +8,7 @@ import logging
 
 def main():
     Metashape.app.gpu_mask = 2 ** (len(Metashape.app.enumGPUDevices())) - 1
-    logging.basicConfig(filename='metashape.log', level=logging.DEBUG)
+    logging.basicConfig(filename='/extvol/metashape.log', level=logging.DEBUG)
     outfile = '/extvol/results.psx'
     doc = Metashape.Document()
     chunk = doc.addChunk() 
