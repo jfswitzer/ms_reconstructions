@@ -11,6 +11,8 @@ def main():
     logging.basicConfig(filename='/extvol/metashape.log', level=logging.DEBUG)
     outfile = '/extvol/results.psx'
     doc = Metashape.Document()
+    doc.read_only = False
+    doc.save(outfile)    
     chunk = doc.addChunk() 
     photos = glob.glob('/extvol/images/*.png')
     logging.debug("START - Adding Files")    
