@@ -17,8 +17,6 @@ def main():
     photos = glob.glob('/extvol/images/*.png')
     logging.debug("START - Adding Files")    
     chunk.addPhotos(photos)
-    doc.read_only = False
-    doc.save(outfile)
     logging.debug("DONE - Adding Files")
     logging.debug("START - Matching Files")        
     chunk.matchPhotos(generic_preselection=True, reference_preselection=False)
