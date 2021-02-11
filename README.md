@@ -87,4 +87,5 @@ Connect with an interactive pod
 
 Copy results to local machine
 
-`kubectl cp int-pod-gpu2:/extvol/ms_reconstruction/result.psz <local destination folder>`
+`kubectl cp int-pod-gpu2:/extvol/ms_reconstruction/result.psx <local destination folder>`
+`kubectl cp int-pod-gpu2:/extvol/ms_reconstruction/result.files <local destination folder>`
