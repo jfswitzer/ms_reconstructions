@@ -12,12 +12,12 @@ spec:
         args: ["sleep 12h"]
         resources:
           limits:
-            nvidia.com/gpu: 1
-            memory: 16Gi
+            nvidia.com/gpu: 0
+            memory: 4Gi
             cpu: 500m
           requests:
-            nvidia.com/gpu: 1
-            memory: 16Gi
+            nvidia.com/gpu: 0
+            memory: 4Gi
             cpu: 500m
         volumeMounts:
         - mountPath: /extvol

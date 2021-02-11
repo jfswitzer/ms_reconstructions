@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: msr
+  name: msr3
 spec:
   template:
     spec:
@@ -25,6 +25,6 @@ spec:
       volumes:
         - name: examplevol1
           persistentVolumeClaim:
-            claimName: msvol
+            claimName: msvol3
       restartPolicy: Never
   backoffLimit: 4
