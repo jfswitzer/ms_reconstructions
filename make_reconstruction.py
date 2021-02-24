@@ -65,8 +65,8 @@ def main():
     logging.debug("DONE - Building texture")
     logging.debug("START - Building orthomosaic")
 
-    chunk.buildOrthomosaic()
-    #chunk.buildOrthomosaic(resolution_x=0.0701037, resolution_y=0.0701037)
+    #chunk.buildOrthomosaic()
+    chunk.buildOrthomosaic(resolution_x=0.0701037, resolution_y=0.0701037)
     doc.read_only = False    
     doc.save(outfile)
     logging.debug("DONE - Building orthomosaic")                                        
