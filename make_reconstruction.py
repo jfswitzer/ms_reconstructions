@@ -19,7 +19,8 @@ def main():
     chunk.addPhotos(photos)
     logging.debug("DONE - Adding Files")
     logging.debug("START - Matching Files")        
-    chunk.matchPhotos(generic_preselection=True, reference_preselection=False)
+    #chunk.matchPhotos(generic_preselection=True, reference_preselection=False)
+    chunk.matchPhotos()
     doc.read_only = False    
     doc.save(outfile)
     logging.debug("DONE - Matching Files")
@@ -39,17 +40,20 @@ def main():
     doc.save(outfile)
     logging.debug("DONE - Resetting region")                        
     logging.debug("START - Building depth maps")                    
-    chunk.buildDepthMaps(downscale=4, filter_mode=Metashape.MildFiltering)
+    #chunk.buildDepthMaps(downscale=4, filter_mode=Metashape.MildFiltering)
+    chunk.buildDepthMaps()
     doc.read_only = False    
     doc.save(outfile)
     logging.debug("DONE - Building depth maps")
-    logging.debug("START - Building dense cloud")                        
+    logging.debug("START - Building dense cloud")
+    chunk.resetRegion()    
     chunk.buildDenseCloud() #todo forum point?
     doc.read_only = False    
     doc.save(outfile)
     logging.debug("DONE - Building dense cloud")
     logging.debug("START - Building model")                            
-    chunk.buildModel(surface_type=Metashape.Arbitrary, face_count=Metashape.HighFaceCount, interpolation=Metashape.EnabledInterpolation, vertex_colors=True)
+    #chunk.buildModel(surface_type=Metashape.Arbitrary, face_count=Metashape.HighFaceCount, interpolation=Metashape.EnabledInterpolation, vertex_colors=True)
+    chunk.buildModel()
     doc.read_only = False    
     doc.save(outfile)
     logging.debug("DONE - Building model")
