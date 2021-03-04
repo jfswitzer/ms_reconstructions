@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: int-pod-gpu2
+  name: int-pod-gpu
 spec:
   containers:
   - name: gpu-container

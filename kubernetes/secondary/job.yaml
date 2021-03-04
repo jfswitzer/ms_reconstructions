@@ -13,12 +13,12 @@ spec:
         resources:
           limits:
             nvidia.com/gpu: 1
-            memory: 256Gi
-            cpu: 32000m
+            memory: 16Gi
+            cpu: 4000m
           requests:
             nvidia.com/gpu: 1
-            memory: 128Gi
-            cpu: 8000m
+            memory: 16Gi
+            cpu: 4000m
         volumeMounts:
         - mountPath: /extvol
           name: examplevol1
